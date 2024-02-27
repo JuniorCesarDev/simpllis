@@ -35,4 +35,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::prefix('cliente')->as('cliente.')->group(function(){
+
+    Route::get('lista','ClienteController@lista')->name('lista');
+    Route::get('cadastro','ClienteController@cadastro')->name('cadastro');
+    Route::post('cadastro','ClienteController@cadastrosalvar')->name('cadastrosalvar');
+    Route::get('editar/{id}','ClienteController@editar')->name('editar');
+    Route::post('editar/{id}','ClienteController@update')->name('update');
+    Route::get('deletar/{id}','ClienteController@deletar')->name('deletar');
+    
+  
+ });
+
+
+
 require __DIR__.'/auth.php';
