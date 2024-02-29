@@ -19,23 +19,25 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                   <!--  <th scope="col">id</th> -->
-                                    <th scope="col">Nome Cliente</th>
-                                    <th scope="col">Endereço</th>
-                                   <!--  <th scope="col">Contato</th> -->
+                                    <th scope="col">Numero da Os</th>
+                                    <th scope="col">Descrição do Serviço</th>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">Placa do Veiculo</th>
+                                    <th scope="col">Data da Revisão</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach( $listas as $lista  )
                                 <tr>
-                                  <!--   <td>{{ $lista->id }}</td> -->
                                     <td>
-                                        <a href="{{ route('cliente.editar',[$lista->id]) }}" style="text-decoration:none" >
-                                            {{ $lista->marca }}
+                                        <a href="{{ route('revisao.editar',[$lista->id]) }}" style="text-decoration:none" >
+                                            {{ $lista->n_os }}
                                         </a>
                                    </td>
-                                    <td>{{ $lista->placa_veiculo }}</td>
-                                   <!--  <td>{{ $lista->contato }}</td> -->
+                                    <td>{{ $lista->servicos }}</td>
+                                    <td>{{ $lista->proprietario_cliente }}</td>
+                                    <td>{{ $lista->placa }}</td>
+                                    <td>{{ date('d/m/Y', strtotime($lista->data_revisao ))}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

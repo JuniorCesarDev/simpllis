@@ -21,7 +21,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                   <!--  <th scope="col">id</th> -->
+                                    <th scope="col">Codigo do Cliente</th>
                                     <th scope="col">Nome Cliente</th>
                                     <th scope="col">Endereço</th>
                                     <th scope="col">Contato</th>
@@ -30,7 +30,7 @@
                             <tbody>
                                 @foreach( $listas as $lista  )
                                 <tr>
-                                  <!--   <td>{{ $lista->id }}</td> -->
+                                    <td>{{ $lista->id }}</td>
                                     <td>
                                         <a href="{{ route('cliente.editar',[$lista->id]) }}" style="text-decoration:none" >
                                             {{ $lista->nome }}

@@ -28,17 +28,13 @@
                             <tbody>
                                 @foreach( $listas as $lista  )
                                 <tr>
-                               
-                                  <!--   <td>{{ $lista->id }}</td> -->
                                     <td>
                                         <a href="{{ route('veiculo.editar',[$lista->id]) }}" style="text-decoration:none" >
                                             {{ $lista->marca }}
                                         </a>
-                                   </td>
+                                    </td>
                                     <td>{{ $lista->placa_veiculo }}</td>
-                                   <!--  <td>{{ $lista->contato }}</td> -->
                                 </tr>
-                               
                                 @endforeach
                             </tbody>
                         </table>

@@ -8,20 +8,28 @@
                 <div class="card">
                     <div class="card-body">
                         <div> <h3>{{ $titulo }}</h3> </div>
-                        <form action="{{route('veiculo.veiculoSalvar')}}" method="post">
+                        <form action="{{route('revisao.revisaosalvar')}}" method="post">
                             @csrf
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Modelo do carro</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="marca" required>
+                                <label for="exampleInputEmail1" class="form-label">Numero da OS</label>
+                                <input type="text" class="form-control n_os" id="exampleInputEmail1" aria-describedby="emailHelp" name="n_os" placeholder="1234" required>
                             </div>
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Placa do Veiculo</label>
-                                <input type="text" class="form-control"  onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa_veiculo" required>
+                                <label for="exampleInputEmail1" class="form-label">Descrição do Serviço</label>
+                                <input type="text" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" name="servicos" placeholder="Manutenção Realizada" required>
                             </div>
-                            <!-- <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Contato</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato" required>
-                            </div> -->
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Prorietario do Veiculo</label>
+                                <input type="text" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" name="proprietario_cliente" placeholder="Cliente"  required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Placa do Veiculo</label>
+                                <input type="text" class="form-control" onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa"  placeholder="AAA1234" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Data do Veiculo</label>
+                                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="data_revisao" required>
+                            </div>
                             <button type="submit" class="btn btn-success" style="float:right">Enviar</button>
                         </form>
                     </div>
@@ -40,6 +48,19 @@
 function limite(string = ""){
     string.value = string.value.substring(0,7);
 }
+
+
+var behavior = function (val) {
+    return val.replace(/\D/g, '').length === 4 ? '0000' : '0009';
+},
+options = {
+    onKeyPress: function (val, e, field, options) {
+        field.mask(behavior.apply({}, arguments), options);
+    }
+};
+
+$('.n_os').mask(behavior, options);
+  
 </script>
 
 

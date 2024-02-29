@@ -22,7 +22,7 @@
                             <label for="exampleInputEmail1" class="form-label">Contato</label>
                                 <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato" required>
                             </div>
-                            <button type="submit" class="btn btn-success" onclick="botao()" style="float:right">Enviar</button>
+                            <button type="submit" class="btn btn-success" style="float:right">Enviar</button>
                         </form>
                     </div>
                 </div>

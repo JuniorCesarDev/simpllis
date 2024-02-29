@@ -26,8 +26,6 @@ class VeiculoController extends Controller
         }else{
             return view('veiculo/lista',compact('titulo','listas'));
         }
-
-       
     }
 
     public function cadastro()
@@ -41,7 +39,6 @@ class VeiculoController extends Controller
         $dados = Veiculo::create([
             "marca"           => $request->marca,
             "placa_veiculo"   => $request->placa_veiculo,
-           // "endereco"      => $request->endereco
         ]);
         if($dados){
             return redirect('veiculo/lista')->with('success', 'Cadastro Salvo com secesso!');
@@ -49,8 +46,6 @@ class VeiculoController extends Controller
             return redirect('veiculo/cadastro')->with('error', 'Cadastro não Salvo!');
         }
     }
-
-    // desenvolver 
 
     public function editar($id)
     {

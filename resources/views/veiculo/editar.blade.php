@@ -19,10 +19,6 @@
                             <label for="exampleInputEmail1" class="form-label">Placa do Veiculo</label>
                                 <input type="text" class="form-control" onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa_veiculo" value="{{ $editar->placa_veiculo }}">
                             </div>
-                            <!-- <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Contato</label>
-                                <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato" value="{{ $editar->contato }}">
-                            </div> -->
                             <button type="submit" class="btn btn-success" style="float:right">Editar</button>
                             <a href="{{ route('veiculo.deletar',['id' => $editar->id]) }}">
                             <button type="button" class="btn btn-outline-danger" style="margin-left:10px">Deletar</button></a>

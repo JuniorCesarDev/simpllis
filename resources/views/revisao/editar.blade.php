@@ -9,22 +9,30 @@
                     <div class="card-body">
                         <div> <h3>{{ $titulo }}</h3> </div>
                        
-                        <form action="{{route('cliente.update',['id' => $editar->id])}}" method="post">
+                        <form action="{{route('revisao.update',['id' => $editar->id])}}" method="post">
                             @csrf
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nome" value="{{ $editar->nome }}">
+                                <label for="exampleInputEmail1" class="form-label">Numero da OS</label>
+                                <input type="text" class="form-control n_os" id="exampleInputEmail1" aria-describedby="emailHelp" name="n_os" placeholder="1234" value="{{ $editar->n_os }}" required>
                             </div>
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Endereço</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="endereco" value="{{ $editar->endereco }}">
+                                <label for="exampleInputEmail1" class="form-label">Descrição do Serviço</label>
+                                <input type="text" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" name="servicos" placeholder="Manutenção Realizada" value="{{ $editar->servicos }}" required>
                             </div>
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Contato</label>
-                                <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato" value="{{ $editar->contato }}">
+                                <label for="exampleInputEmail1" class="form-label">Prorietario do Veiculo</label>
+                                <input type="text" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" name="proprietario_cliente" placeholder="Cliente" value="{{ $editar->proprietario_cliente }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Placa do Veiculo</label>
+                                <input type="text" class="form-control" onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa"  placeholder="AAA1234" value="{{ $editar->placa }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Data do Veiculo</label>
+                                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="data_revisao" value="{{ $editar->data_revisao }}" required>
                             </div>
                             <button type="submit" class="btn btn-success" style="float:right">Editar</button>
-                            <a href="{{ route('cliente.deletar',['id' => $editar->id]) }}">
+                            <a href="{{ route('revisao.deletar',['id' => $editar->id]) }}">
                             <button type="button" class="btn btn-outline-danger" style="margin-left:10px">Deletar</button></a>
                         </form>
                     </div>
@@ -40,7 +48,7 @@
 
 <script>
 var behavior = function (val) {
-    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    return val.replace(/\D/g, '').length === 11 ? '0000' : '0009';
 },
 options = {
     onKeyPress: function (val, e, field, options) {
@@ -48,5 +56,5 @@ options = {
     }
 };
 
-$('.contato').mask(behavior, options);
+$('.n_os').mask(behavior, options);
 </script>

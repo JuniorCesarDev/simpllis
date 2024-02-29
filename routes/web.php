@@ -51,8 +51,18 @@ Route::prefix('veiculo')->as('veiculo.')->group(function(){
     Route::post('cadastro','VeiculoController@veiculoSalvar')->name('veiculoSalvar');
     Route::get('editar/{id}','VeiculoController@editar')->name('editar');
     Route::post('editar/{id}','VeiculoController@update')->name('update');
-     Route::get('deletar/{id}','VeiculoController@deletar')->name('deletar');
- });
+    Route::get('deletar/{id}','VeiculoController@deletar')->name('deletar');
+});
+
+Route::prefix('revisao')->as('revisao.')->group(function(){
+    Route::get('lista','RevisaoController@lista')->name('lista');
+    Route::get('cadastro','RevisaoController@cadastro')->name('cadastro');
+    Route::post('cadastro','RevisaoController@revisaosalvar')->name('revisaosalvar');
+    Route::get('editar/{id}','RevisaoController@editar')->name('editar');
+    Route::post('editar/{id}','RevisaoController@update')->name('update');
+    Route::get('deletar/{id}','RevisaoController@deletar')->name('deletar');
+});
+
 
 
 require __DIR__.'/auth.php';
