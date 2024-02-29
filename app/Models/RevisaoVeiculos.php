@@ -21,4 +21,14 @@ class RevisaoVeiculos extends Model
         'updated_at',
         'created_at'
     ];
+
+
+    // FUNCOES
+    public static function DashRevisoesSoma()
+    {
+       return RevisaoVeiculos::count('id');
+       
+        // return RevisaoVeiculos::select('id','n_os')
+        // ->get(); 
+    }
 }

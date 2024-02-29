@@ -65,6 +65,14 @@ Route::middleware(['auth'])->group(function(){
         Route::get('deletar/{id}','RevisaoController@deletar')->name('deletar');
     });
 
+    Route::prefix('dashboard')->as('dashboard.')->group(function(){
+        Route::get('','DashbordController@DashRevisoes')->name('DashRevisoes');
+    });
+
+    Route::prefix('relatorio')->as('relatorio.')->group(function(){
+        Route::get('cliente','RelatorioController@cliente')->name('cliente');
+    });
+
 });
 
 require __DIR__.'/auth.php';
