@@ -9,13 +9,13 @@ class Veiculo extends Model
 {
     use HasFactory;
 
-    protected $table = 'tb_revisao_veiculos';
+    protected $table = 'tb_veiculo';
 
     protected $fillable =[
         'id',
         'marca',
         'placa_veiculo',
-        'fk_proprietario',
+        //'fk_proprietario',
         'updated_at',
         'created_at'
     ];

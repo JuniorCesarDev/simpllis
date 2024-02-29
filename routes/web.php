@@ -37,17 +37,22 @@ Route::middleware('auth')->group(function () {
 
 
 Route::prefix('cliente')->as('cliente.')->group(function(){
-
     Route::get('lista','ClienteController@lista')->name('lista');
     Route::get('cadastro','ClienteController@cadastro')->name('cadastro');
     Route::post('cadastro','ClienteController@cadastrosalvar')->name('cadastrosalvar');
     Route::get('editar/{id}','ClienteController@editar')->name('editar');
     Route::post('editar/{id}','ClienteController@update')->name('update');
     Route::get('deletar/{id}','ClienteController@deletar')->name('deletar');
-    
-  
- });
+});
 
+Route::prefix('veiculo')->as('veiculo.')->group(function(){
+    Route::get('lista','VeiculoController@lista')->name('lista');
+    Route::get('cadastro','VeiculoController@cadastro')->name('cadastro');
+    Route::post('cadastro','VeiculoController@veiculoSalvar')->name('veiculoSalvar');
+    Route::get('editar/{id}','VeiculoController@editar')->name('editar');
+    Route::post('editar/{id}','VeiculoController@update')->name('update');
+     Route::get('deletar/{id}','VeiculoController@deletar')->name('deletar');
+ });
 
 
 require __DIR__.'/auth.php';

@@ -9,22 +9,22 @@
                     <div class="card-body">
                         <div> <h3>{{ $titulo }}</h3> </div>
                        
-                        <form action="{{route('cliente.update',['id' => $editar->id])}}" method="post">
+                        <form action="{{route('veiculo.update',['id' => $editar->id])}}" method="post">
                             @csrf
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nome" value="{{ $editar->nome }}">
+                            <label for="exampleInputEmail1" class="form-label">Marca do Carro</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="marca" value="{{ $editar->marca }}">
                             </div>
                             <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Endereço</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="endereco" value="{{ $editar->endereco }}">
+                            <label for="exampleInputEmail1" class="form-label">Placa do Veiculo</label>
+                                <input type="text" class="form-control" onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa_veiculo" value="{{ $editar->placa_veiculo }}">
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Contato</label>
                                 <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato" value="{{ $editar->contato }}">
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn btn-success" style="float:right">Editar</button>
-                            <a href="{{ route('cliente.deletar',['id' => $editar->id]) }}">
+                            <a href="{{ route('veiculo.deletar',['id' => $editar->id]) }}">
                             <button type="button" class="btn btn-outline-danger" style="margin-left:10px">Deletar</button></a>
                         </form>
                     </div>
@@ -49,4 +49,9 @@ options = {
 };
 
 $('.contato').mask(behavior, options);
+
+
+function limite(string = ""){
+    string.value = string.value.substring(0,7);
+}
 </script>

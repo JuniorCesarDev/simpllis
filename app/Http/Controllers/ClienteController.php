@@ -34,7 +34,11 @@ class ClienteController extends Controller
             "endereco"        => $request->endereco
         ]);
 
-        return redirect('cliente/lista');
+        if($dados){
+            return redirect('cliente/lista')->with('success', 'Cadastro Salvo com secesso!');
+        }else{
+            return redirect('cliente/cadastro')->with('error', 'Cadastro não Salvo!');
+        }
     }
 
     public function editar($id)
@@ -53,7 +57,11 @@ class ClienteController extends Controller
             "endereco"        => $request->endereco
         ]);
 
-        return redirect('cliente/lista');
+        if($dados){
+            return redirect('cliente/lista')->with('edit', 'Cadastro Salvo com secesso!');
+        }else{
+            return redirect('cliente/cadastro')->with('error', 'Cadastro não Salvo!');
+        }
     }
 
     public function deletar(Request $request, Cliente $cliente,$id)
@@ -62,6 +70,4 @@ class ClienteController extends Controller
         $editar->delete();
         return redirect('cliente/lista');
     }
-    
-
 }

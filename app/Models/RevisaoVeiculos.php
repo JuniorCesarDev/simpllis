@@ -13,6 +13,7 @@ class RevisaoVeiculos extends Model
 
     protected $fillable =[
         'id',
+        'n_os',
         'servicos',
         'proprietario_cliente',
         'placa',
