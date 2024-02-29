@@ -12,11 +12,11 @@
                             @csrf
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Modelo do carro</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="marca" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="marca"  placeholder="Golf"  required>
                             </div>
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Placa do Veiculo</label>
-                                <input type="text" class="form-control"  onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa_veiculo" required>
+                                <input type="text" class="form-control"  onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa_veiculo"  placeholder="AAA1234"  required>
                             </div>
                             <!-- <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Contato</label>

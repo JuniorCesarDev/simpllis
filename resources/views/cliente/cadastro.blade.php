@@ -12,15 +12,15 @@
                             @csrf
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nome" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nome"  placeholder="Nome Cliente"  required>
                             </div>
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Endereço</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="endereco" required>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="endereco"  placeholder="AV. Trabalhadores"  required>
                             </div>
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Contato</label>
-                                <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato" required>
+                                <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato"  placeholder="(00) 00000-0000"  required>
                             </div>
                             <button type="submit" class="btn btn-success" style="float:right">Enviar</button>
                         </form>
