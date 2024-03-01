@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <div class="col">
     <small style='float:right;'>Gerado:<?php echo date('d/m/Y H:i'); ?></small>
-    <h3>{{ $titulo}}</h3>
+    <h3>{{ $titulo}}</h3> 
     <hr>
     <table class="table">
         <thead>

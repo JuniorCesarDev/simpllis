@@ -84,6 +84,8 @@ Route::middleware(['auth'])->group(function(){
         Route::get('lista','RelatorioVeiculoController@lista')->name('lista');
         Route::get('todos_veiculos','RelatorioVeiculoController@todos_veiculos')->name('todos_veiculos');
         Route::get('indece','RelatorioVeiculoController@indece')->name('indece');
+        Route::get('todas_marcas','RelatorioVeiculoController@todas_marcas')->name('todas_marcas');
+        Route::get('ordMF','RelatorioVeiculoController@ordMF')->name('ordMF');
     });
 
 });

@@ -45,4 +45,23 @@ class RelatorioVeiculoController extends Controller
         $pdf = PDF::loadView('relatorio/veiculos/indice',compact('titulo','veiculos','indiceM','indiceF'));
         return $pdf->setPaper('a4','landscape')->stream('data');
     }
+
+    public function todas_marcas()
+    {
+        $titulo = 'Relatorio de Todos os Veículos';
+        $veiculos = Veiculo::orderBy('id', 'ASC')->get();
+
+        $pdf = PDF::loadView('relatorio/veiculos/todas_marcas',compact('titulo','veiculos'));
+        return $pdf->setPaper('a4','landscape')->stream('data');
+    }
+
+    public function ordMF()
+    {
+        $titulo = 'Relatorio de Todos os Veículos';
+        $veiculos = Veiculo::orderBy('sexo', 'ASC')->get();
+
+        $pdf = PDF::loadView('relatorio/veiculos/ordMF',compact('titulo','veiculos'));
+        return $pdf->setPaper('a4','landscape')->stream('data');
+    }
+    
 }
