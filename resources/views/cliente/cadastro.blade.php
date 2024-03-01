@@ -22,7 +22,21 @@
                             <label for="exampleInputEmail1" class="form-label">Contato</label>
                                 <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato"  placeholder="(00) 00000-0000"  required>
                             </div>
-                            <button type="submit" class="btn btn-success" style="float:right">Enviar</button>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="exampleInputEmail1" class="form-label">Gênero</label>
+                                    <select class="form-select form-select " aria-label=".form-select example"  name="sexo" required >
+                                        <option selected>Selecione...</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="exampleInputEmail1" class="form-label">Data Nascimento</label>
+                                    <input type="date" class="form-control" name="data_nascimento" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success" style="float:right;margin-top:2%">Enviar</button>
                         </form>
                     </div>
                 </div>

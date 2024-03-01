@@ -24,13 +24,27 @@ class RelatorioController extends Controller
     public function cliente()
     {
         $titulo = "Relatorio de Cliente Cadastrados ";
+        $clientes = Cliente::all();
 
-       
-        // $pdf = Pdf::loadView('pdf.invoice', $titulo);
-        // return $pdf->download('invoice.pdf');
+        $pdf = PDF::loadView('relatorio/cliente',compact('titulo','clientes'));
+        return $pdf->setPaper('a4','landscape')->stream('data');
+    }
 
-        //return  Pdf::loadHTML($html)->setPaper('a4', 'landscape')->setWarnings(false)->save('cliente.pdf');
-        $pdf = PDF::loadView('relatorio/cliente',compact('titulo'));
+    public function veiculo()
+    {
+        $titulo = "Relatorio de Veículos ";
+        $veiculos = Veiculo::all();
+        
+        $pdf = PDF::loadView('relatorio/veiculo',compact('titulo','veiculos'));
+        return $pdf->setPaper('a4','landscape')->stream('data');
+    }
+
+    public function revisao()
+    {
+        $titulo = "Relatorio de Revisões ";
+        $revisoes = RevisaoVeiculos::all();
+        
+        $pdf = PDF::loadView('relatorio/revisao',compact('titulo','revisoes'));
         return $pdf->setPaper('a4','landscape')->stream('data');
     }
 }

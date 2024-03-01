@@ -12,6 +12,10 @@
                         <form action="{{route('veiculo.update',['id' => $editar->id])}}" method="post">
                             @csrf
                             <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nome Cliente</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nome" value="{{ $editar->nome }}">
+                            </div>
+                            <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Marca do Carro</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="marca" value="{{ $editar->marca }}">
                             </div>
@@ -19,9 +23,23 @@
                             <label for="exampleInputEmail1" class="form-label">Placa do Veiculo</label>
                                 <input type="text" class="form-control" onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa_veiculo" value="{{ $editar->placa_veiculo }}">
                             </div>
-                            <button type="submit" class="btn btn-success" style="float:right">Editar</button>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="exampleInputEmail1" class="form-label">Gênero</label>
+                                    <select class="form-select form-select " aria-label=".form-select example"  name="sexo" value="{{ $editar->sexo }}"  >
+                                        <option selected>Selecione...</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="exampleInputEmail1" class="form-label">Data Nascimento</label>
+                                    <input type="date" class="form-control" name="data_nascimento" value="{{ $editar->data_nascimento }}" >
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success" style="float:right;margin-top:2%">Editar</button>
                             <a href="{{ route('veiculo.deletar',['id' => $editar->id]) }}">
-                            <button type="button" class="btn btn-outline-danger" style="margin-left:10px">Deletar</button></a>
+                            <button type="button" class="btn btn-outline-danger" style="margin-left:10px;margin-top:2%">Deletar</button></a>
                         </form>
                     </div>
                 </div>

@@ -71,6 +71,19 @@ Route::middleware(['auth'])->group(function(){
 
     Route::prefix('relatorio')->as('relatorio.')->group(function(){
         Route::get('cliente','RelatorioController@cliente')->name('cliente');
+        Route::get('veiculo','RelatorioController@veiculo')->name('veiculo');
+        Route::get('revisao','RelatorioController@revisao')->name('revisao');
+    });
+
+    Route::prefix('relatorio_cliente')->as('relatorio_cliente.')->group(function(){
+        Route::get('lista','RelatorioClientesController@lista')->name('lista');
+        Route::get('todos_clientes','RelatorioClientesController@todos_clientes')->name('todos_clientes');
+    });
+
+    Route::prefix('relatorio_veiculo')->as('relatorio_veiculo.')->group(function(){
+        Route::get('lista','RelatorioVeiculoController@lista')->name('lista');
+        Route::get('todos_veiculos','RelatorioVeiculoController@todos_veiculos')->name('todos_veiculos');
+        Route::get('indece','RelatorioVeiculoController@indece')->name('indece');
     });
 
 });

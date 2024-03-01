@@ -37,8 +37,12 @@ class VeiculoController extends Controller
     public function VeiculoSalvar(Request $request, Veiculo $veiculo)
     {
         $dados = Veiculo::create([
-            "marca"           => $request->marca,
-            "placa_veiculo"   => $request->placa_veiculo,
+            "nome"              => $request->nome,
+            "marca"             => $request->marca,
+            "placa_veiculo"     => $request->placa_veiculo,
+            "sexo"              => $request->sexo,
+            "data_nascimento"   => $request->data_nascimento
+          
         ]);
         if($dados){
             return redirect('veiculo/lista')->with('success', 'Cadastro Salvo com secesso!');
@@ -58,9 +62,11 @@ class VeiculoController extends Controller
     {
         $dados = Veiculo::find($id); 
         $dados->update([
-            "marca"            => $request->marca,
-            "placa_veiculo"    => $request->placa_veiculo,
-           // "endereco"        => $request->endereco
+            "nome"              => $request->nome,
+            "marca"             => $request->marca,
+            "placa_veiculo"     => $request->placa_veiculo,
+            "sexo"              => $request->sexo,
+            "data_nascimento"   => $request->data_nascimento
         ]);
 
         if($dados){

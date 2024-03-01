@@ -16,7 +16,18 @@ class Cliente extends Model
         'nome',
         'endereco',
         'contato',
+        'sexo',
+        'data_nascimento',
         'updated_at',
         'created_at'
     ];
+
+    //FUNÇÃO 
+    // public static function IdadeSomatoria()
+    // {
+    //     return Cliente::select('data_nascimento')
+    //     ->get(); 
+    // }
+
+
 }

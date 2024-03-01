@@ -16,7 +16,7 @@ class ClienteController extends Controller
     public function lista()
     {
         $titulo = 'Listagem de Clientes';
-        $listas = Cliente::all();
+        $listas = Cliente::orderBy('nome', 'ASC')->get();
         return view('cliente/lista',compact('titulo','listas'));
     }
 
@@ -29,9 +29,12 @@ class ClienteController extends Controller
     public function CadastroSalvar(Request $request, Cliente $cliente)
     {
         $dados = Cliente::create([
-            "nome"            => $request->nome,
-            "contato"         => $request->contato,
-            "endereco"        => $request->endereco
+            "nome"              => $request->nome,
+            "contato"           => $request->contato,
+            "endereco"          => $request->endereco,
+            "sexo"              => $request->sexo,
+            "data_nascimento"   => $request->data_nascimento,
+            
         ]);
 
         if($dados){
@@ -54,7 +57,9 @@ class ClienteController extends Controller
         $dados->update([
             "nome"            => $request->nome,
             "contato"         => $request->contato,
-            "endereco"        => $request->endereco
+            "endereco"        => $request->endereco,
+            "sexo"            => $request->sexo,
+            "data_nascimento" => $request->data_nascimento,
         ]);
 
         if($dados){

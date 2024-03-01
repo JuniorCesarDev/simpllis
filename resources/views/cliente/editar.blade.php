@@ -23,9 +23,23 @@
                             <label for="exampleInputEmail1" class="form-label">Contato</label>
                                 <input type="text" class="form-control contato" id="exampleInputEmail1" aria-describedby="emailHelp" name="contato" value="{{ $editar->contato }}">
                             </div>
-                            <button type="submit" class="btn btn-success" style="float:right">Editar</button>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="exampleInputEmail1" class="form-label">Gênero</label>
+                                    <select class="form-select form-select " aria-label=".form-select example"  name="sexo" value="{{ $editar->sexo }}" required >
+                                        <option selected>Selecione...</option>
+                                        <option value="M">Masculino</option>
+                                        <option value="F">Feminino</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="exampleInputEmail1" class="form-label">Data Nascimento</label>
+                                    <input type="date" class="form-control" name="data_nascimento" value="{{ $editar->data_nascimento }}" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success" style="float:right;margin-top:2%">Editar</button>
                             <a href="{{ route('cliente.deletar',['id' => $editar->id]) }}">
-                            <button type="button" class="btn btn-outline-danger" style="margin-left:10px">Deletar</button></a>
+                            <button type="button" class="btn btn-outline-danger" style="margin-left:10px;margin-top:2%">Deletar</button></a>
                         </form>
                     </div>
                 </div>

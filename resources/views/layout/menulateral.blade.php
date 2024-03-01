@@ -21,7 +21,7 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ route('cliente.lista') }}">Listagem</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" target=”_blank” href="{{ url('relatorio_cliente/lista') }}">Relatorio Cliente </a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -33,7 +33,7 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ route('veiculo.lista') }}">Listagem</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" target=”_blank” href="{{ url('relatorio_veiculo/lista') }}">Relatorio Veículos</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -45,7 +45,7 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ route('revisao.lista') }}">Listagem</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" target=”_blank” href="{{ url('relatorio/revisao') }}">Relatorio de Revisões</a></li>
           </ul>
         </li>
         <!-- <li class="nav-item">

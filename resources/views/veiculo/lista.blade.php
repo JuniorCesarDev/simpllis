@@ -19,10 +19,10 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                   <!--  <th scope="col">id</th> -->
-                                    <th scope="col">Marco do Carro</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Gênero do Cliente</th>
+                                    <th scope="col">Marca do Veículo</th>
                                     <th scope="col">Placa do Veículo </th>
-                                   <!--  <th scope="col">Contato</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -30,9 +30,11 @@
                                 <tr>
                                     <td>
                                         <a href="{{ route('veiculo.editar',[$lista->id]) }}" style="text-decoration:none" >
-                                            {{ $lista->marca }}
+                                        {{ $lista->nome }}
                                         </a>
                                     </td>
+                                    <td>{{ $lista->sexo == 'M' ? 'Masculino' : 'Feminino' }}</td>
+                                    <td>{{ $lista->marca }}</td>
                                     <td>{{ $lista->placa_veiculo }}</td>
                                 </tr>
                                 @endforeach

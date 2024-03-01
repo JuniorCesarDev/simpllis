@@ -23,6 +23,8 @@
                                 <tr>
                                     <th scope="col">Codigo do Cliente</th>
                                     <th scope="col">Nome Cliente</th>
+                                    <th scope="col">Data de Nascimeto</th>
+                                    <th scope="col">Gênero do Cliente</th>
                                     <th scope="col">Endereço</th>
                                     <th scope="col">Contato</th>
                                 </tr>
@@ -30,12 +32,14 @@
                             <tbody>
                                 @foreach( $listas as $lista  )
                                 <tr>
-                                    <td>{{ $lista->id }}</td>
                                     <td>
                                         <a href="{{ route('cliente.editar',[$lista->id]) }}" style="text-decoration:none" >
-                                            {{ $lista->nome }}
+                                            {{ $lista->id }}
                                         </a>
                                    </td>
+                                    <td>{{ $lista->nome }}</td>
+                                    <td>{{ date('d/m/Y', strtotime($lista->data_nascimento)) }}</td>
+                                    <td>{{ $lista->sexo == 'M' ? 'Masculino' : 'Feminino' }}</td>
                                     <td>{{ $lista->endereco }}</td>
                                     <td>{{ $lista->contato }}</td>
                                 </tr>
