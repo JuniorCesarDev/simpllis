@@ -45,7 +45,7 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ route('revisao.lista') }}">Listagem</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" target=”_blank” href="{{ url('relatorio/revisao') }}">Relatorio de Revisões</a></li>
+            <li><a class="dropdown-item" target=”_blank” href="{{ url('relatorio_revisao/lista') }}">Relatorio de Revisões</a></li>
           </ul>
         </li>
         <!-- <li class="nav-item">

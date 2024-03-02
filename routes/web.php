@@ -88,6 +88,11 @@ Route::middleware(['auth'])->group(function(){
         Route::get('ordMF','RelatorioVeiculoController@ordMF')->name('ordMF');
     });
 
+    Route::prefix('relatorio_revisao')->as('relatorio_revisao.')->group(function(){
+        Route::get('lista','RelatorioRevisaoController@lista')->name('lista');
+        Route::get('todos_revisoes','RelatorioRevisaoController@todos_revisoes')->name('todos_revisoes');
+    });
+
 });
 
 require __DIR__.'/auth.php';
