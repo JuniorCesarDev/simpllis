@@ -39,6 +39,7 @@ class RevisaoVeiculos extends Model
     public static function DashRevisoesSoma()
     {
        return RevisaoVeiculos::count('id');
-       
     }
+
+
 }

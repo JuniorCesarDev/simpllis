@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                           <!--  <div class="col">
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
                                         <h5 class="card-title">Indice</h5>
@@ -53,8 +53,8 @@
                                         <a target=”_blank” href="{{ url('relatorio_veiculo/todas_marcas') }}"  class="btn btn-primary">Gerar</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col">
+                            </div> -->
+                            <!-- <div class="col">
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
                                         <h5 class="card-title">Indice</h5>
@@ -62,7 +62,7 @@
                                         <a target=”_blank” href="{{ url('relatorio_veiculo/ordMF') }}"  class="btn btn-primary">Gerar</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

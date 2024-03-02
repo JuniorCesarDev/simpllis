@@ -47,7 +47,7 @@ class RelatorioRevisaoController extends Controller
         //MarcasDosVeiculos
         //$listas = Manutencao::with('ManutentorOP')->find($id);
         $revioes = RevisaoVeiculos::with('MarcasDosVeiculos')->get();
-       
+
         $pdf = PDF::loadView('relatorio/revisao/marcas_revisoes',compact('titulo','revioes'));
         return $pdf->setPaper('a4','landscape')->stream('data');
     }
