@@ -40,8 +40,8 @@
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
                                         <h5 class="card-title">Indice</h5>
-                                        <p class="card-text">Relátorio Indice Quem Possui Mais Veículo</p>
-                                        <a target=”_blank” href="{{ url('relatorio_veiculo/indece') }}"  class="btn btn-primary">Gerar</a>
+                                        <p class="card-text">Relátorio Maior Quantidade de Reviões</p>
+                                        <a target=”_blank” href="{{ url('relatorio_revisao/marcas_revisoes') }}"  class="btn btn-primary">Gerar</a>
                                     </div>
                                 </div>
                             </div>

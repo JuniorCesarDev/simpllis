@@ -33,29 +33,6 @@
                                 <div id="piechart" style="width: 400px; height: 400px;"></div>
                             </body>
                         </div>
-                        <div class="col">
-                            <head>
-                                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                                <script type="text/javascript">
-                                google.charts.load('current', {'packages':['corechart']});
-                                google.charts.setOnLoadCallback(drawChart);
-                                function drawChart() {
-                                    var data = google.visualization.arrayToDataTable([
-                                        ['id','n_os'],
-                                        ['{{ $dashRevisoes }}' , {{ $dashRevisoes }} ]
-                                    ]);
-                                    var options = {
-                                        title: ' Quantidade Revisões'
-                                    };
-                                    var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
-                                    chart.draw(data, options);
-                                }
-                                </script>
-                            </head>
-                            <body>
-                                <div id="piechart1" style="width: 400px; height: 400px;"></div>
-                            </body>
-                        </div>
                     </div>
                 </div>
             </div>

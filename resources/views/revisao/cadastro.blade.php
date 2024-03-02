@@ -27,7 +27,7 @@
                                 <input type="text" class="form-control" onkeyup="limite(this)"  id="exampleInputEmail1" aria-describedby="emailHelp" name="placa"  placeholder="AAA1234" required>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Data do Veiculo</label>
+                                <label for="exampleInputEmail1" class="form-label">Data da Revisão</label>
                                 <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="data_revisao" required>
                             </div>
                             <button type="submit" class="btn btn-success" style="float:right">Enviar</button>
